@@ -106,7 +106,7 @@
         footer {
             width: 100%;
             height: auto;
-            padding: 10px;
+            /* padding: 10px; */
             margin-top: 2vh;
             box-shadow: 10px 0 0 0 rgba(0, 0, 0, 0.3);
             background-color: var(--bg-nav);
@@ -119,7 +119,7 @@
             flex: 1;
             text-align: center;
             padding: 5px;
-            font-size: 19px;
+            font-size: 16px;
         }
 
         footer section h1 {
@@ -152,7 +152,7 @@
         footer .contact p a {
             color: white;
             text-decoration: none;
-            font-size: 30px;
+            font-size: 25px;
             padding: 5px;
             border-radius: 10px;
         }
@@ -172,7 +172,7 @@
             width: 100%;
             padding: 5px;
             color: white;
-            font-size: 19px;
+            font-size: 16px;
             background-color: rgba(0, 0, 0, 0.2);
         }
 
@@ -199,6 +199,62 @@
             bottom: 40px;
             visibility: visible;
         }
+
+        /* section produit */
+
+        .section_prd {
+            width: 90%;
+            margin: 5vh auto;
+            padding: 10px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .section_prd .content {
+            width: 20%;
+            margin: 5px;
+            padding: 5px;
+            box-shadow: 0 0 13px rgba(0, 0, 0, 0.3);
+            border-radius: 7px;
+        }
+
+        .section_prd .content .prd_img {
+            width: 100%;
+            height: 20vh;
+            border-radius: 7px;
+        }
+
+        .section_prd .content .prd_img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .section_prd .content .prd_txt {
+            margin: 5px;
+            padding: 5px;
+            text-align: left;
+        }
+
+        .section_prd .content .prd_btn {
+            padding: 5px;
+            margin: 5px;
+            text-align: left;
+        }
+
+        .section_prd .content .prd_btn a {
+            padding: 5px;
+            background-color: var(--bg-nav);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .section_prd .content .prd_btn a:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+
 
 
 
@@ -299,6 +355,159 @@
 
     {{-- section dynamique --}}
 
+    <section class="section_prd">
+
+        {{-- foreach --}}
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+        {{-- end foreach --}}
+
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="prd_img">
+                <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            </div>
+            <div class="prd_txt">
+                <p class="Name">Ordinateur</p>
+                <p class="Price">125 000 FCFA</p>
+            </div>
+            <div class="prd_btn">
+                <a href="#">Payer</a>
+                <a href="#">Crédit</a>
+            </div>
+        </div>
+
+    </section>
+
+
+
     <section>
         @yield('dynamique')
     </section>
@@ -323,10 +532,12 @@
             <li>Et plein de d'autre</li>
 
         </section>
-
+        <section class="adr">
+            <h1>Adresse</h1>
+        </section>
         <section class="contact">
 
-            <h1>Contacts</h1>
+            <h1>Réseaux</h1>
             <p>
                 <a href="#"><i class="fas fa-globe-africa"></i></a>
             </p>
