@@ -1,0 +1,29 @@
+#form{
+   width: 100%;
+   padding: 10px 20px;
+   display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+#form_first, #form_second{
+   flex: 1;
+   margin: 10px;
+}
+#form_first{
+    box-shadow: 2px 2px 12px #c0c0c0cc;
+    padding: 10px;
+ }
+#form_second{
+    box-shadow: 2px 2px 12px #c0c0c0cc;
+    padding: 10px;
+ }
+
+@media Screen and (max-width: 850px){
+    #form{
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+         justify-content: center;
+         flex-direction: column;
+     }
+}

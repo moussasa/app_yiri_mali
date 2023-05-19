@@ -40,7 +40,8 @@ return [
     */
 
     'layout' => 'layouts.app',
-
+    // 'layout' => 'livewire.accueil',
+    
     /*
     |--------------------------------------------------------------------------
     | Livewire Assets URL

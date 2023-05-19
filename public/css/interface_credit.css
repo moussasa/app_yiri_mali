@@ -1,0 +1,107 @@
+.details_prds {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+}
+
+.details_prds .details_bg {
+    width: 100%;
+    height: 60vh;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.details_prds .details_bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.details_prds .details_imgs {
+    margin-top: 4px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-nav);
+    border-bottom: 1px solid #000;
+}
+.conseil{
+    max-width:90%;
+    height: auto;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
+.conseil p{
+    text-align: left;
+}
+.details_prds .details_imgs img {
+    width: 10%;
+    height: 10%;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.details_prds .details_imgs .active {
+    border: 2px solid white;
+    opacity: .8;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.details_prds .details_txt {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: var(--bg-nav);
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.details_prds .details_txt .description {
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.details_prds .details_txt div {
+    text-align: center;
+    margin: 30px;
+}
+
+.details_prds .details_txt a {
+    font-family: Arial sans-serif;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 22px;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border: 2px solid white;
+    text-align: center;
+}
+
+.details_prds .details_txt a:hover {
+    background-color: var(--bg-nav);
+}
+
+.details_prds .details_txt p {
+    margin: 10px;
+}
+
+@media Screen and (max-width:850px) {
+    .details_prds .details_bg {
+        width: 100%;
+        height: 50vh;
+        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+    }
+    .details_prds .details_imgs img {
+        width: 20%;
+        height: 20%;
+        cursor: pointer;
+        margin: 5px;
+    }
+}
