@@ -1,205 +1,46 @@
-{{-- accueil --}}
-<div class="first_view">
-    {{-- <div class="first_view_cercle"></div> --}}
-    <div class="first_view_text">
-        <h4>Yiri-<span>Mali</span> </h4>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos unde eaque voluptatibus vero quaerat iure error
-            quisquam corrupti dolorem molestias officiis asperiores ab dolores laborum, facilis quam inventore omnis
-            neque?</p>
-        <a href="tel:777">Passer un appel</a>
-    </div>
-
-    <div class="first_view_img">
-        <img src="{{asset('images/R.png')}}" alt="">
-    </div>
-</div>
-
 <section class="section_prd">
-    {{-- foreach --}}
+
 
     {{-- input search --}}
     <input type="text" wire:model="search_n" id="search_n" class="search_n" placeholder="Rechercher...">
 
-    <div class="content">
-        <div class="prd_img">
-            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
-            <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
-            {{-- <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: red;">O</span>
-            --}}
-        </div>
-        <div class="prd_txt">
-            <p class="Name">Ordinateur</p>
-            <p class="Price">125 000 FCFA</p>
-        </div>
-        <div class="prd_btn">
-            <a href="#">Payer</a>
-            <a href="{{route('credit',2)}}">Crédit</a>
-        </div>
-    </div>
+    {{-- foreach --}}
 
+    @forelse ($produit as $produits)
     <div class="content">
         <div class="prd_img">
-            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
+            @if ($produits->image->first() !=null)
+            <img src="{{asset('storage/produit/'.$produits->image[0]->chemin)}}" alt="Produit">
+            @else
+            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit">
+            @endif
+
+            @if ($produits->stat_prod == 1)
             <span
                 style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
-            {{-- <span
+
+            @else
+            <span
                 style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: red;">O</span>
-            --}}
+
+            @endif
+
         </div>
         <div class="prd_txt">
-            <p class="Name">Ordinateur</p>
-            <p class="Price">125 000 FCFA</p>
+            <p class="Name">{{$produits->nom_prod}}</p>
+            <p class="Price">{{$produits->prix_prod}} FCFA</p>
         </div>
         <div class="prd_btn">
             <a href="#">Payer</a>
-            <a href="{{route('credit',2)}}">Crédit</a>
+            <a href="{{route('credit',$produits->id)}}">Crédit</a>
         </div>
     </div>
-    <div class="content">
-        <div class="prd_img">
-            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
-            <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
-            {{-- <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: red;">O</span>
-            --}}
-        </div>
-        <div class="prd_txt">
-            <p class="Name">Ordinateur</p>
-            <p class="Price">125 000 FCFA</p>
-        </div>
-        <div class="prd_btn">
-            <a href="#">Payer</a>
-            <a href="{{route('credit',2)}}">Crédit</a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="prd_img">
-            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
-            <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
-            {{-- <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: red;">O</span>
-            --}}
-        </div>
-        <div class="prd_txt">
-            <p class="Name">Ordinateur</p>
-            <p class="Price">125 000 FCFA</p>
-        </div>
-        <div class="prd_btn">
-            <a href="#">Payer</a>
-            <a href="{{route('credit',2)}}">Crédit</a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="prd_img">
-            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
-            <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
-            {{-- <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: red;">O</span>
-            --}}
-        </div>
-        <div class="prd_txt">
-            <p class="Name">Ordinateur</p>
-            <p class="Price">125 000 FCFA</p>
-        </div>
-        <div class="prd_btn">
-            <a href="#">Payer</a>
-            <a href="{{route('credit',2)}}">Crédit</a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="prd_img">
-            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
-            <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
-            {{-- <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: red;">O</span>
-            --}}
-        </div>
-        <div class="prd_txt">
-            <p class="Name">Ordinateur</p>
-            <p class="Price">125 000 FCFA</p>
-        </div>
-        <div class="prd_btn">
-            <a href="#">Payer</a>
-            <a href="{{route('credit',2)}}">Crédit</a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="prd_img">
-            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
-            <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
-            {{-- <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: red;">O</span>
-            --}}
-        </div>
-        <div class="prd_txt">
-            <p class="Name">Ordinateur</p>
-            <p class="Price">125 000 FCFA</p>
-        </div>
-        <div class="prd_btn">
-            <a href="#">Payer</a>
-            <a href="{{route('credit',2)}}">Crédit</a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="prd_img">
-            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
-            <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
-            {{-- <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: red;">O</span>
-            --}}
-        </div>
-        <div class="prd_txt">
-            <p class="Name">Ordinateur</p>
-            <p class="Price">125 000 FCFA</p>
-        </div>
-        <div class="prd_btn">
-            <a href="#">Payer</a>
-            <a href="{{route('credit',2)}}">Crédit</a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="prd_img">
-            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
-            <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
-            {{-- <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: red;">O</span>
-            --}}
-        </div>
-        <div class="prd_txt">
-            <p class="Name">Ordinateur</p>
-            <p class="Price">125 000 FCFA</p>
-        </div>
-        <div class="prd_btn">
-            <a href="#">Payer</a>
-            <a href="{{route('credit',2)}}">Crédit</a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="prd_img">
-            <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit {{asset('images/yiri_mali_logo.png')}}">
-            <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
-            {{-- <span
-                style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: red;">O</span>
-            --}}
-        </div>
-        <div class="prd_txt">
-            <p class="Name">Ordinateur</p>
-            <p class="Price">125 000 FCFA</p>
-        </div>
-        <div class="prd_btn">
-            <a href="#">Payer</a>
-            <a href="{{route('credit',2)}}">Crédit</a>
-        </div>
+    @empty
+    <center>Aucun résultat pour {{$search_n}}</center>
+    @endforelse
+   
+    <div class="links">
+        {{$produit->links()}}
     </div>
     {{-- end foreach --}}
 

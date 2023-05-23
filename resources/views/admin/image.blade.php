@@ -18,16 +18,14 @@
     </div>
     @endif
 
-    <div class="header float-right">
-        <button data-toggle='modal' data-target="#modal_ajout" class="btn btn-primary p-2 m-2">Ajouter Un
-            image</button>
-    </div>
+  
     <table class="table table-dark">
         <thead>
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Prix</th>
+                <th scope="col">Image</th>
                 <th scope="col">Image</th>
                 <th scope="col">Image</th>
                 <th scope="col">Image</th>
@@ -41,18 +39,41 @@
                 <td>{{$produits->nom_prod}}</td>
                 <td>{{$produits->prix_prod}}</td>
                 <td>
-                    <img style="" src="{{asset('public/produit/'.$produits->image->first())}}"
-                        alt="{{$produits->image->chemin }}">
-                </td>
-                <td>
+                    @if ($produits->image->first() !=null)
+                    <img style="width:60px;height:60px;border-radius: 50%;"
+                        src="{{asset('storage/produit/'.$produits->image[0]->chemin)}}" alt="Produit">
+                    @else
                     <img style="height: 60px;width: 60px;border-radius: 50%;" src="{{asset('images/no-data.png')}}"
                         alt="">
+                    @endif
                 </td>
                 <td>
+                    @if ($produits->image->first() !=null)
+                    <img style="width:60px;height:60px;border-radius: 50%;"
+                        src="{{asset('storage/produit/'.$produits->image[1]->chemin)}}" alt="Produit">
+                    @else
                     <img style="height: 60px;width: 60px;border-radius: 50%;" src="{{asset('images/no-data.png')}}"
                         alt="">
+                    @endif
                 </td>
-
+                <td>
+                    @if ($produits->image->first() !=null)
+                    <img style="width:60px;height:60px;border-radius: 50%;"
+                        src="{{asset('storage/produit/'.$produits->image[2]->chemin)}}" alt="Produit">
+                    @else
+                    <img style="height: 60px;width: 60px;border-radius: 50%;" src="{{asset('images/no-data.png')}}"
+                        alt="">
+                    @endif
+                </td>
+                <td>
+                    @if ($produits->image->first() !=null)
+                    <img style="width:60px;height:60px;border-radius: 50%;"
+                        src="{{asset('storage/produit/'.$produits->image[3]->chemin)}}" alt="Produit">
+                    @else
+                    <img style="height: 60px;width: 60px;border-radius: 50%;" src="{{asset('images/no-data.png')}}"
+                        alt="">
+                    @endif
+                </td>
                 <td>
                     <button id="edit_btn" value="{{$produits->id}}" type="button" class="btn btn-warning text-white">
                         <i class="fa fa-add"></i>
@@ -64,13 +85,13 @@
             </tr>
             @empty
             <tr>
-                <td colspan="7" style="text-align: center;background-color: white;">
+                <td colspan="8" style="text-align: center;background-color: white;">
                     <img style="height: 200px;width: 200px;" src="{{asset('images/no-data.png')}}" alt="">
                 </td>
 
             </tr>
             <tr>
-                <td colspan="7" style="text-align: center;background-color: white;color: black;">Aucun resultat</td>
+                <td colspan="8" style="text-align: center;background-color: white;color: black;">Aucun resultat</td>
             </tr>
             @endforelse
 
@@ -80,7 +101,7 @@
     </table>
 
     <div class="links">
-        {{-- {{$produit->links()}} --}}
+        {{$produit->links()}}
     </div>
 </div>
 @endsection
@@ -157,7 +178,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            
+
             <form action="{{route('admin.image_add')}}" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
 
@@ -172,10 +193,10 @@
 
                     <div class="w-100 p-2 border-black">
                         <label for="un_image_edit">Veillez selectionner les 4 images !</label>
-                        <input type="file" multiple required name="files[]" id="files"
-                            class="form form-control" style="text-align: center;padding: 0;height: 100%;margin: 5px;">
-                           
-                    
+                        <input type="file" multiple required name="files[]" id="files" class="form form-control"
+                            style="text-align: center;padding: 0;height: 100%;margin: 5px;">
+
+
                     </div>
                 </div>
                 <div class="modal-footer">
