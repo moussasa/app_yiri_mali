@@ -125,7 +125,7 @@
                     @csrf
                     @method('post')
 
-                    <label for="nom_prod">Nom du image</label>
+                    <label for="nom_prod">Nom  image</label>
                     <input type="text" required min="1" name="nom_prod" id="nom_prod" class="form form-control">
 
                     <label for="prix_prod">Pix du image</label>

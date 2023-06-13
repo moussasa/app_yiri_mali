@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\achat;
 use App\Models\Categorie;
 use App\Models\Commande;
 use App\Models\Image;
 use App\Models\Produit;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Stripe\Charge;
 use Stripe\Stripe;
@@ -73,7 +75,7 @@ class ProduitController extends Controller
         } elseif ($produit->prix_prod > 200000 && $produit->prix_prod <= 500000) {
             $mois = 7;
         } else {
-            $mois = 1;
+            $mois = 8;
         }
 
         // le montant mensuell a payer
@@ -125,6 +127,13 @@ class ProduitController extends Controller
                 "description" => 'Paiement du produit id:' . $produit->id . ' ' . $produit->nom_prod . ' sur Yiri-Mali',
             ]);
 
+            if($charge){
+                $cmd = new achat();
+                $cmd->produit_id = $produit->id;
+                $cmd->user_id = Auth::user()->id;
+                $cmd->save();
+            }
+
         } 
         catch (Exception $e) {
             Session::put('erreur', $e);
@@ -142,7 +151,7 @@ class ProduitController extends Controller
     }
     public function main()
     {
-        $produit = Produit::with('categorie')->paginate(5);
+        $produit = Produit::with('categorie')->orderBy('id','desc')->paginate(5);
         $categorie = Categorie::all();
         return view('admin.produit', [
             'produit' => $produit,
@@ -155,6 +164,12 @@ class ProduitController extends Controller
             'nom_prod' => 'required|min:1',
             'prix_prod' => 'required|min:1',
         ]);
+   
+        $exist = Produit::where('nom_prod', $request->input('nom_prod'))->get();
+        
+        if ($exist->count() > 0) {
+            return redirect()->back()->with('erreur', 'Ce produit existe deja');
+        }
 
         $produit = new Produit();
         $produit->nom_prod = $request->input('nom_prod');

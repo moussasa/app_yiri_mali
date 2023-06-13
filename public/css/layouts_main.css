@@ -68,7 +68,8 @@
 
 .nav ul li a:hover {
     position: relative;
-    }
+}
+
 .nav ul li a::before {
     background-color: rgba(248, 248, 248, 0.935);
     position: absolute;
@@ -80,6 +81,7 @@
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
 }
+
 .nav ul li a::after {
     background-color: rgba(255, 255, 255, 0.935);
     position: absolute;
@@ -91,10 +93,12 @@
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
 }
+
 .nav ul li a:hover::before {
     width: 50%;
     transition: .3s;
 }
+
 .nav ul li a:hover::after {
     width: 50%;
     transition: .3s;
@@ -146,14 +150,14 @@ footer {
 }
 
 footer section {
-    margin-top: 2vh;
+    margin-top: 5px;
     flex: 1;
     padding: 15px;
     font-size: 16px;
 }
 
 footer div {
-    padding-top: 5vh;
+    padding-top: vh;
 }
 
 footer section h2 {
@@ -167,26 +171,35 @@ footer section h2 {
 
 }
 
- .about a{
+.about span {
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.about a {
     text-decoration: none;
     padding: 5px;
-    font-size: 19px;
-    background-color: rgba(46, 46, 51, 0.513);;
+    font-size: 23px;
+    background-color: var(--bg-nav);
     color: white;
     line-height: 40px;
     margin: 5px;
     border-radius: 6px;
 }
-.about a:hover{
-    background-color: rgba(255, 255, 255, 0.513);;
+
+.about a:hover {
     color: black;
 }
+
 .about .img {
     text-align: center;
 }
+
 .about img {
     width: 30%;
-    height: 15vh;
+    height: 10vh;
 }
 
 footer .contact p {
@@ -313,16 +326,17 @@ footer .contact p a:hover {
 
     footer section img {
         width: 30%;
-        height: 20vh;
+        height: 15vh;
     }
-    .about span{
-       
-        display:inline-block;
+
+    .about span {
+        display: inline-block;
         width: 100%;
         margin: auto;
         text-align: center;
     }
-    .about a{
+
+    .about a {
         text-decoration: none;
         padding: 5px;
         font-size: 23px;
@@ -333,10 +347,11 @@ footer .contact p a:hover {
         border-radius: 6px;
 
     }
-    .about a:hover{
+
+    .about a:hover {
         background-color: var(--bg-nav);
         color: black;
     }
-    
+
 
 }

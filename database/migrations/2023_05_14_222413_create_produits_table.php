@@ -27,6 +27,9 @@ return new class extends Migration
         Schema::table('commandes', function (Blueprint $table) {
             $table->foreignIdFor(Produit::class)->constrained()->cascadeOnDelete();
         });
+        Schema::table('achats', function (Blueprint $table) {
+            $table->foreignIdFor(Produit::class)->constrained()->cascadeOnDelete();
+        });
     }
 
     /**
@@ -39,6 +42,9 @@ return new class extends Migration
             $table->dropForeignIdFor(Produit::class);
         });
         Schema::table('commandes', function (Blueprint $table) {
+            $table->dropForeignIdFor(Produit::class);
+        });
+        Schema::table('achats', function (Blueprint $table) {
             $table->dropForeignIdFor(Produit::class);
         });
     }

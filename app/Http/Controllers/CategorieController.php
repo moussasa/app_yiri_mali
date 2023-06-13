@@ -10,7 +10,7 @@ class CategorieController extends Controller
     //
     public function main()
     {
-        $categorie = Categorie::paginate(5);
+        $categorie = Categorie::orderBy('id', 'desc')->paginate(5);
         return view('admin.categorie', [
             'categorie' => $categorie,
         ]);
@@ -20,17 +20,25 @@ class CategorieController extends Controller
         $request->validate([
             'nom_cate' => 'required|min:1',
         ]);
+
+        $exist = Categorie::where('nom_cate', $request->input('nom_cate'))->get();
+
+        if ($exist->count() > 0) {
+            return redirect()->back()->with('erreur', 'Cette Catégorie existe deja');
+        }
+
         $categorie = new Categorie();
         $categorie->nom_cate = $request->input('nom_cate');
         $categorie->save();
 
         return redirect()->back()->with('success', 'Catégorie Ajoutée avec succès');
+
     }
     public function update(Request $request)
     {
         $categories = Categorie::find($request->input('edit_cat_id'));
         $exist = Categorie::where('nom_cate', $request->input('edit_cat_name'));
-        
+
         if ($exist->count() > 0) {
             return redirect()->back()->with('erreur', 'Cette Catégorie existe deja');
         }

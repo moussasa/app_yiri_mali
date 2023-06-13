@@ -34,7 +34,7 @@
         <tbody>
             @forelse ($categorie as $categories)
             <tr>
-                <td scope="row">{{$loop->index++}}</td>
+                <td scope="row">{{$categories->id}}</td>
                 <td>{{$categories->nom_cate}}</td>
                 <td>{{$categories->updated_at}}</td>
                 <td>

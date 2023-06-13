@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('last_name')->nullable();
-            $table->string('phone')->unique();
+            $table->string('phone')->nullable();
             $table->string('adresse');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -28,6 +28,9 @@ return new class extends Migration
         Schema::table('commandes', function (Blueprint $table) {
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
         });
+        Schema::table('achats', function (Blueprint $table) {
+            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
+        });
     }
 
     /**
@@ -37,6 +40,9 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
         Schema::table('commandes', function (Blueprint $tables) {
+            $tables->dropConstrainedForeignIdFor(User::class);
+        });
+        Schema::table('achats', function (Blueprint $tables) {
             $tables->dropConstrainedForeignIdFor(User::class);
         });
     }

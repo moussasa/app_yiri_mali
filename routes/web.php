@@ -52,6 +52,8 @@ Route::prefix('admin')->middleware(['auth','admin:1'])->group(function () {
     Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
     Route::get('/commande', [AdminController::class, 'commande'])->name('admin.commande');
+    Route::get('/achat', [AdminController::class, 'achat'])->name('admin.achat');
+    Route::get('/client', [AdminController::class, 'client'])->name('admin.client');
 
     Route::prefix('')->group(function () {
         Route::get('/caregorie', [CategorieController::class, 'main'])->name('admin.categorie');

@@ -111,6 +111,38 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.commande')}}" class="nav-link {{request()->routeIs('admin.commande') ? 'active' : ''}}">
+                                <i class="nav-icon fa fa-images"></i>
+                                <p>
+                                    Maintenance
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.commande')}}" class="nav-link {{request()->routeIs('admin.commande') ? 'active' : ''}}">
+                                <i class="nav-icon fa fa-images"></i>
+                                <p>
+                                    Formation
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.achat')}}" class="nav-link {{request()->routeIs('admin.achat') ? 'active' : ''}}">
+                                <i class="nav-icon fa fa-images"></i>
+                                <p>
+                                    Achats
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.client')}}" class="nav-link {{request()->routeIs('admin.client') ? 'active' : ''}}">
+                                <i class="nav-icon fa fa-images"></i>
+                                <p>
+                                    Clients
+                                </p>
+                            </a>
+                        </li>
 
                         {{-- <li class="nav-item">
                             <a href="#" class="nav-link">

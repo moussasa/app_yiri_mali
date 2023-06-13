@@ -41,7 +41,7 @@ class UserController extends Controller
 
     public function login()
     {
-        // $d = User::create([
+        // User::create([
         //     'name' => 'moussa',
         //     'last_name' => 'samake',
         //     'phone' => '77612839',
@@ -50,7 +50,7 @@ class UserController extends Controller
         //     'password' => Hash::make(11111),
         //     'role' => 1,
         // ]);
-        // $d->save();
+        
 
         return view('auth.login');
     }
