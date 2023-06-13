@@ -36,10 +36,14 @@ Route::prefix('')->group(function () {
     Route::get('/', [ProduitController::class, 'accueil'])->name('main');
     Route::get('/search', [ProduitController::class, 'search'])->name('search');
     Route::get('/credit/{produit}', [ProduitController::class, 'show'])->name('credit');
+    Route::get('/payer/{produit}', [ProduitController::class, 'show_payer'])->name('payer');
     
     // show article and make command
     Route::get('/form/{produit}', [ProduitController::class, 'form'])->name('credit.form')->middleware('auth');
     Route::post('/form_commande', [ProduitController::class, 'form_commande'])->name('credit.form_commande')->middleware('auth');
+    // show article and make checkout
+    Route::get('/form_payer/{produit}', [ProduitController::class, 'form_payer'])->name('payer.form')->middleware('auth');
+    Route::post('/form_payer', [ProduitController::class, 'form_payer_post'])->name('payer.form_payer')->middleware('auth');
 
 });
 

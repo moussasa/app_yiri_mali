@@ -101,8 +101,8 @@
                         </div>
 
                         <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Mot de passe oublié ?</a></p>
-                        <p>Vous n'avez pas de compte ? <a href="{{route('user.login')}}"
-                                class="link-info">Créer un compte ici</a></p>
+                        <p>J'ai dèja un compte ? <a href="{{route('user.login')}}"
+                                class="link-info">Se connecté</a></p>
 
                     </form>
 

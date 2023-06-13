@@ -5,7 +5,7 @@
     --bg-nav: rgb(38, 190, 157);
 }
 
-nav {
+.nav {
     position: sticky;
     top: 0;
     width: 100%;
@@ -17,7 +17,7 @@ nav {
     z-index: 100;
 }
 
-nav .logo {
+.nav .logo {
     width: 65px;
     height: 65px;
     margin: 2.5px;
@@ -25,17 +25,17 @@ nav .logo {
     border-radius: 50%;
 }
 
-nav .logo img {
+.nav .logo img {
     width: 100%;
     height: 100%;
     object-fit: fill;
 }
 
-nav ul {
+.nav ul {
     line-height: 70px;
 }
 
-nav ul li {
+.nav ul li {
     display: inline-block;
     padding: 0 10px;
     margin: 0 5px;
@@ -58,7 +58,7 @@ nav ul li {
     }
 }
 
-nav ul li a {
+.nav ul li a {
     color: white;
     padding: 2px;
     text-decoration: none;
@@ -66,10 +66,10 @@ nav ul li a {
     font-size: 16px;
 }
 
-nav ul li a:hover {
+.nav ul li a:hover {
     position: relative;
     }
-nav ul li a::before {
+.nav ul li a::before {
     background-color: rgba(248, 248, 248, 0.935);
     position: absolute;
     content: '';
@@ -80,7 +80,7 @@ nav ul li a::before {
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
 }
-nav ul li a::after {
+.nav ul li a::after {
     background-color: rgba(255, 255, 255, 0.935);
     position: absolute;
     content: '';
@@ -91,16 +91,16 @@ nav ul li a::after {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
 }
-nav ul li a:hover::before {
+.nav ul li a:hover::before {
     width: 50%;
     transition: .3s;
 }
-nav ul li a:hover::after {
+.nav ul li a:hover::after {
     width: 50%;
     transition: .3s;
 }
 
-nav ul li .active {
+.nav ul li .active {
     background-color: rgba(205, 231, 37, 0.935);
     padding: 10px;
 }
@@ -138,7 +138,6 @@ nav ul li .active {
 footer {
     width: 100%;
     height: auto;
-    margin-top: 2vh;
     box-shadow: 10px 0 0 0 rgba(0, 0, 0, 0.3);
     background-color: var(--bg-nav);
     display: flex;
@@ -225,6 +224,7 @@ footer .contact p a:hover {
     color: white;
     font-size: 16px;
     background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 0;
 }
 
 .scrolltop {
@@ -261,7 +261,7 @@ footer .contact p a:hover {
         display: none;
     }
 
-    nav ul {
+    .nav ul {
         position: absolute;
         top: 70px;
         width: 70%;
@@ -282,11 +282,7 @@ footer .contact p a:hover {
         /* color: #1702fd; */
     }
 
-    #menu_chk:checked body {
-        background-color: red;
-    }
-
-    nav ul li {
+    .nav ul li {
         display: block;
         text-align: center;
     }
@@ -319,5 +315,28 @@ footer .contact p a:hover {
         width: 30%;
         height: 20vh;
     }
+    .about span{
+       
+        display:inline-block;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+    .about a{
+        text-decoration: none;
+        padding: 5px;
+        font-size: 23px;
+        background-color: var(--bg-nav);
+        color: white;
+        line-height: 40px;
+        margin: 6px;
+        border-radius: 6px;
+
+    }
+    .about a:hover{
+        background-color: var(--bg-nav);
+        color: black;
+    }
+    
 
 }

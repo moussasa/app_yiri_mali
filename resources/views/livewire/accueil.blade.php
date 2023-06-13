@@ -31,7 +31,7 @@
             <p class="Price">{{$produits->prix_prod}} FCFA</p>
         </div>
         <div class="prd_btn">
-            <a href="#">Payer</a>
+            <a href="{{route('payer',$produits->id)}}">Payer</a>
             <a href="{{route('credit',$produits->id)}}">Crédit</a>
         </div>
     </div>
@@ -39,9 +39,10 @@
     <center>Aucun résultat pour {{$search_n}}</center>
     @endforelse
    
-    <div class="links">
-        {{$produit->links()}}
-    </div>
+   
     {{-- end foreach --}}
 
 </section>
+ <div class="links">
+        {{$produit->links('pagination::bootstrap-4')}}
+    </div>

@@ -22,6 +22,17 @@
     </div>
 </div>
 
+
+{{-- session message --}}
+
+@if (Session::has('success'))
+<div class="alert alert-success alert-dismissible fade show m-5 bg-blue-500" role="alert">
+    <strong>{{Session::get('success')}} </strong>
+   <a href="{{route('main')}}" class="btn btn-primary p-2"> Cliquez ici</a>
+</div>
+{{Session::put('success',null)}}
+@endif
+
     <div>
         @livewire('accueil')
     </div>

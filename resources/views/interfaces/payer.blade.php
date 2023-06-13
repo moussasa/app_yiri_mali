@@ -33,15 +33,21 @@
 
       <div class="conseil">
         <p>
-            Avant d'éffectuer une commande vous devez vous s'inscrire sur notre plateforem (ou vous connecter si vous êtes deja inscris) en cliquant sur le boutton si dessous
+           Vous pouvez effectué l'achat si vous disposez d'une carte visa ou master card.
         </p>
         <p>
-            Vous serez rediriger vers notre interface de connection.
-        </p>
+            Avant d'éffectuer l'achat vous devez vous s'inscrire sur notre plateforme (ou vous connecter si vous êtes deja inscris) en cliquant sur le boutton si dessous.
+        </p>        
       </div>
-        <div style="margin: 5vh 0;">
-            <a href="{{route('credit.form',$produit->id)}}">Commander</a>
+        <div style="display: flex;justify-content: space-between;align-items: center;width: 200px;height: 60px;margin:auto;">
+            <a href="{{route('payer.form',$produit->id)}}" style="padding: 0;display: flex;justify-content: center;align-items: center;border-radius: 22px;width: calc(100% - 10px);height: 100%;margin: 0 10px">
+                <img style="width: 100%;height: 100%;border-radius: 12px;" src="{{asset('images/visa_master_card.jpeg')}}" alt="">
+            </a>
+            <a href="#" style="padding: 0;display: flex;justify-content: center;align-items: center;border-radius: 22px;width: calc(100% - 10px);height: 100%;margin: 0 10px">
+                <img style="width: 80%;height: 100%;border-radius: 12px;" src="{{asset('images/paypal.png')}}" alt="">
+            </a>
         </div>
+       
     </div>
 
 
