@@ -7,13 +7,21 @@
 @section('dynamique')
 <section class="details_prds">
     <div class="details_bg">
+        @if ($image_first !=null)
         <img id="bg_change" src="{{asset('storage/produit/'.$image_first->chemin)}}" alt="">
+        @else
+        <img id="bg_change" src="{{asset('images/no-data.png')}}"
+            alt="">
+        @endif
     </div>
 
     <div class="details_imgs">
-        @foreach ($image as $images)
+        @if ($image_first !=null)
+             @foreach ($image as $images)
         <img src="{{asset('storage/produit/'.$images->chemin)}}" alt="">
         @endforeach
+        @endif
+       
  
     </div>
     <div class="details_txt">

@@ -38,6 +38,11 @@ Route::prefix('')->group(function () {
     Route::get('/credit/{produit}', [ProduitController::class, 'show'])->name('credit');
     Route::get('/payer/{produit}', [ProduitController::class, 'show_payer'])->name('payer');
     
+    Route::get('/formation', [ProduitController::class, 'formation'])->name('formation');
+    Route::post('/formation/send_formation', [ProduitController::class, 'send_formation'])->name('send_formation');
+   
+    Route::get('/maintenace', [ProduitController::class, 'maintenace'])->name('maintenace');
+    
     // show article and make command
     Route::get('/form/{produit}', [ProduitController::class, 'form'])->name('credit.form')->middleware('auth');
     Route::post('/form_commande', [ProduitController::class, 'form_commande'])->name('credit.form_commande')->middleware('auth');
@@ -54,6 +59,7 @@ Route::prefix('admin')->middleware(['auth','admin:1'])->group(function () {
     Route::get('/commande', [AdminController::class, 'commande'])->name('admin.commande');
     Route::get('/achat', [AdminController::class, 'achat'])->name('admin.achat');
     Route::get('/client', [AdminController::class, 'client'])->name('admin.client');
+    Route::get('/formation', [AdminController::class, 'formation'])->name('admin.formation');
 
     Route::prefix('')->group(function () {
         Route::get('/caregorie', [CategorieController::class, 'main'])->name('admin.categorie');

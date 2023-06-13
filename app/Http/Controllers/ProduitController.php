@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\achat;
 use App\Models\Categorie;
 use App\Models\Commande;
+use App\Models\Formation;
 use App\Models\Image;
 use App\Models\Produit;
 use Exception;
@@ -120,22 +121,21 @@ class ProduitController extends Controller
 
         try {
 
-            $charge =Charge::create([
+            $charge = Charge::create([
                 "amount" => $prix,
                 "currency" => "xof",
                 "source" => $request->input('stripeToken'), // obtainded with Stripe.js
                 "description" => 'Paiement du produit id:' . $produit->id . ' ' . $produit->nom_prod . ' sur Yiri-Mali',
             ]);
 
-            if($charge){
+            if ($charge) {
                 $cmd = new achat();
                 $cmd->produit_id = $produit->id;
                 $cmd->user_id = Auth::user()->id;
                 $cmd->save();
             }
 
-        } 
-        catch (Exception $e) {
+        } catch (Exception $e) {
             Session::put('erreur', $e);
 
             return redirect()->back();
@@ -151,7 +151,7 @@ class ProduitController extends Controller
     }
     public function main()
     {
-        $produit = Produit::with('categorie')->orderBy('id','desc')->paginate(5);
+        $produit = Produit::with('categorie')->orderBy('id', 'desc')->paginate(5);
         $categorie = Categorie::all();
         return view('admin.produit', [
             'produit' => $produit,
@@ -164,9 +164,9 @@ class ProduitController extends Controller
             'nom_prod' => 'required|min:1',
             'prix_prod' => 'required|min:1',
         ]);
-   
+
         $exist = Produit::where('nom_prod', $request->input('nom_prod'))->get();
-        
+
         if ($exist->count() > 0) {
             return redirect()->back()->with('erreur', 'Ce produit existe deja');
         }
@@ -217,5 +217,28 @@ class ProduitController extends Controller
         $produit = Produit::find($request->input('edit_prod_id_supr'));
         $produit->delete();
         return redirect()->back()->with('success', 'Produit supprimée avec succès');
+    }
+
+    public function formation()
+    {
+        return view('interfaces.formation');
+    }
+    public function send_formation(Request $request)
+    {
+        $new = Formation::create([
+            'nom' => $request->input('nom'),
+            'adresse' => $request->input('adresse'),
+            'formation' => $request->input('formation'),
+            'duree' => $request->input('duree'),
+            'phone' => $request->input('numero'),
+        ]);
+        if ($new) {
+            return redirect()->back()->with('success', 'Envoyer avec succès nous allons vous contactez très bientot');
+        }
+        return redirect()->back()->with('erreur', 'Erreur Veillez nous contacter');
+    }
+    public function maintenace()
+    {
+        return view('interfaces.maintenace');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\achat;
 use App\Models\Categorie;
 use App\Models\Commande;
+use App\Models\Formation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,13 @@ class AdminController extends Controller
         $client = User::orderBy('id','desc')->paginate(5);
         return view('admin.client', [
             'client' => $client,
+        ]);
+    }
+    public function formation()
+    {
+        $formation = Formation::orderBy('id','desc')->paginate(5);
+        return view('admin.formation', [
+            'formation' => $formation,
         ]);
     }
    

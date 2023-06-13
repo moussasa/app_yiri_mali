@@ -120,7 +120,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('admin.commande')}}" class="nav-link {{request()->routeIs('admin.commande') ? 'active' : ''}}">
+                            <a href="{{route('admin.formation')}}" class="nav-link {{request()->routeIs('admin.formation') ? 'active' : ''}}">
                                 <i class="nav-icon fa fa-images"></i>
                                 <p>
                                     Formation

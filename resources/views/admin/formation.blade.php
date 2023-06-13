@@ -2,7 +2,7 @@
 @section('page')
 <div class="p-2 ">
 
-    <h1>Liste des clients</h1>
+    <h1>Liste des formations</h1>
     @if (Session::has('success'))
     <div class="alert alert-success">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -23,25 +23,23 @@
         <thead>
             <tr>
                 <th scope="col">id</th>
-                <th scope="col">Prenom</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Adresse</th>
+                <th scope="col">Formation</th>
                 <th scope="col">Numero</th>
-                <th scope="col">Email</th>
                 <th scope="col">date</th>
             </tr>
         </thead>
         <tbody>
-            @forelse ($client as $clients)
+            @forelse ($formation as $formations)
             <tr>
-                <td scope="row">{{$clients->id}}</td>
-                <td>{{$clients->name}}</td>
-                <td>{{$clients->last_name}}</td>
-                <td>{{$clients->adresse}}</td>
-                <td>{{$clients->phone}}</td>
-                <td>{{$clients->email}}</td>
+                <td scope="row">{{$formations->id}}</td>
+                <td>{{$formations->nom}}</td>
+                <td>{{$formations->adresse}}</td>
+                <td>{{$formations->formation}}</td>
+                <td>{{$formations->phone}}</td>
                
-                <td>{{$clients->created_at}}</td>
+                <td>{{$formations->created_at}}</td>
             </tr>
             @empty
             <tr >
@@ -61,7 +59,7 @@
     </table>
 
     <div class="links">
-        {{$client->links()}}
+        {{$formation->links()}}
     </div>
 </div>
 @endsection

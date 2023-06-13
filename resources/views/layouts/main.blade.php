@@ -44,8 +44,8 @@
 
             <ul>
                 <li style="--i:1;"><a href="{{ route('main') }}">Accueil</a></li>
-                <li style="--i:2;"><a href="#">Formation</a></li>
-                <li style="--i:3;"><a href="#">Maintenance</a></li>
+                <li style="--i:2;"><a href="{{ route('formation') }}">Formation</a></li>
+                <li style="--i:3;"><a href="{{ route('maintenace') }}">Maintenance</a></li>
                 <li style="--i:4;"><a href="{{ route('user.login') }}">Connection</a></li>
             </ul>
         </label>
