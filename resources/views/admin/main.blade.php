@@ -112,7 +112,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('admin.commande')}}" class="nav-link {{request()->routeIs('admin.commande') ? 'active' : ''}}">
+                            <a href="{{route('admin.maintenance')}}" class="nav-link {{request()->routeIs('admin.maintenance') ? 'active' : ''}}">
                                 <i class="nav-icon fa fa-images"></i>
                                 <p>
                                     Maintenance

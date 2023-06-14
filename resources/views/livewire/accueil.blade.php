@@ -15,7 +15,7 @@
             <img src="{{asset('images/yiri_mali_logo.png')}}" alt="Produit">
             @endif
 
-            @if ($produits->stat_prod == 1)
+            @if ($produits->etat_prod == 1)
             <span
                 style="position: absolute;bottom: 0;right: 0; border-radius: 3px; color: white;padding: 2px;background-color: green;">N</span>
 

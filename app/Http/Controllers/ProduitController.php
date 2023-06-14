@@ -7,6 +7,7 @@ use App\Models\Categorie;
 use App\Models\Commande;
 use App\Models\Formation;
 use App\Models\Image;
+use App\Models\Maintenance;
 use App\Models\Produit;
 use Exception;
 use Illuminate\Http\Request;
@@ -240,5 +241,22 @@ class ProduitController extends Controller
     public function maintenace()
     {
         return view('interfaces.maintenace');
+    }
+
+    public function send_maintenance(Request $request)
+    {
+        $new = Maintenance::create([
+            'nom' => $request->input('nom'),
+            'adresse' => $request->input('adresse'),
+            'phone' => $request->input('phone'),
+            'marque' => $request->input('marque'),
+            'carracteristique' => $request->input('carracteristique'),
+            'panne' => $request->input('panne'),
+            'etat' => $request->input('etat'),
+        ]);
+        if ($new) {
+            return redirect()->back()->with('success', 'Envoyer avec succès nous allons vous contactez très bientot');
+        }
+        return redirect()->back()->with('erreur', 'Erreur Veillez nous contacter');
     }
 }

@@ -42,6 +42,7 @@ Route::prefix('')->group(function () {
     Route::post('/formation/send_formation', [ProduitController::class, 'send_formation'])->name('send_formation');
    
     Route::get('/maintenace', [ProduitController::class, 'maintenace'])->name('maintenace');
+    Route::post('/maintenace/send_maintenance', [ProduitController::class, 'send_maintenance'])->name('send_maintenance');
     
     // show article and make command
     Route::get('/form/{produit}', [ProduitController::class, 'form'])->name('credit.form')->middleware('auth');
@@ -60,6 +61,7 @@ Route::prefix('admin')->middleware(['auth','admin:1'])->group(function () {
     Route::get('/achat', [AdminController::class, 'achat'])->name('admin.achat');
     Route::get('/client', [AdminController::class, 'client'])->name('admin.client');
     Route::get('/formation', [AdminController::class, 'formation'])->name('admin.formation');
+    Route::get('/maintenance', [AdminController::class, 'maintenance'])->name('admin.maintenance');
 
     Route::prefix('')->group(function () {
         Route::get('/caregorie', [CategorieController::class, 'main'])->name('admin.categorie');
